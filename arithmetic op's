@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b,sum,sub,prod;
+float div;
+printf("Enter two numbers:");
+scanf("%d %d ",&a, &b);
+sum=a+b;
+sub=a-b;
+prod=a*b;
+div=a/b;
+printf("sum: %d",sum);
+printf("subtraction: %d",sub);
+printff("Product: %d",prod);
+printf("Quotient: %f",div);
+getch();
+}
