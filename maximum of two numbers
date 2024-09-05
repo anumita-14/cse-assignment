@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int a,b max=0;
+printf("Enter two numbers:");
+scanf("%d %d",&a,&b);
+if(a>max)
+max=a;
+else(b>max)
+max=b;
+printf("Maximum=%d",max);
+getch();
+}
