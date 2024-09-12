@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+printf("size of int data type is: %u bytes\n",sizeof(int));
+printf("size of float data type is: %u bytes\n",sizeof(float));
+printf("size of double data type: %u bytes\n",sizeof(double));
+printf("size of char data type: %u bytes\n",sizeof(char));
+getch();
+}
