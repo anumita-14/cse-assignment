@@ -1,1 +1,26 @@
-
+#include <stdio.h>
+#include<conio.h>
+int main() {
+   int n,i,j,count=1;
+   printf("Enter size of array: ");
+   scanf("%d",&n);
+   int a[n];
+   printf("Enter %d elements into the array \n",n);
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&a[i]);
+   }
+   printf("Frequency of each element:\n");
+   for(i=0;i<n;i++)
+   {
+     for(j=i+1;j<n;j++)
+     { 
+       if(a[i]==a[j])
+       count++;
+   }
+   printf("Frequency of %d is: %d \n",a[i],count);
+   count=1;
+   }
+    getch();
+    return 0;
+}
