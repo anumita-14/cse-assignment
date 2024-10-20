@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include<string.h>
+int main() 
+{
+char s[50],s1[50];
+printf("Enter a string: ");
+gets(s);
+printf("Enter another string: ");
+gets(s1);
+strcat(s,s1);
+printf("String after concatenating: %s",s);
+return 0;
+}
