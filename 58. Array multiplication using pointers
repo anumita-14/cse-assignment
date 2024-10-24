@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void multiplyArrays(int *a, int *b, int *c, int size) {
+    for(int i = 0; i < size; i++) {
+        c[i] = a[i] * b[i];
+    }
+}
+
+int main() {
+    int size;
+    printf("Enter the size of the arrays: ");
+    scanf("%d", &size);
+
+    int a[size], b[size], c[size];
+
+    printf("Enter the first array elements:\n");
+    for(int i = 0; i < size; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    printf("Enter the second array elements:\n");
+    for(int i = 0; i < size; i++) {
+        scanf("%d", &b[i]);
+    }
+
+    multiplyArrays(a, b, c, size);
+
+    printf("Product of the arrays: ");
+    for(int i = 0; i < size; i++) {
+        printf("%d ", c[i]);
+    }
+
+    return 0;
+}
