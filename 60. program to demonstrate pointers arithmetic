@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int *p = arr; // equivalent to p = &arr[0];
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Pointer arithmetic demonstration:\n");
+    printf("Array elements are: ");
+    for(int i = 0; i < size; i++) {
+        printf("%d ", *(p + i)); // equivalent to p[i]
+    }
+
+    printf("\nPointer pointing to the last element: %p\n", (p + size - 1));
+    printf("Value at the address pointed by the pointer: %d\n", *(p + size - 1));
+
+    printf("Pointer decremented by 1: %p\n", (p + size - 2));
+    printf("Value at the address pointed by the decremented pointer: %d\n", *(p + size - 2));
+
+    printf("Pointer pointing to the first element: %p\n", p);
+    printf("Value at the address pointed by the pointer: %d\n", *p);
+
+    return 0;
+}
