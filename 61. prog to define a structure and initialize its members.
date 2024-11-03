@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+// Define a structure named 'Student'
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
+
+int main() {
+    // Initialize a structure variable
+    struct Student student1 = {"John Doe", 101, 95.5};
+
+    // Print the structure members
+    printf("Name: %s\n", student1.name);
+    printf("Roll: %d\n", student1.roll);
+    printf("Marks: %.2f\n", student1.marks);
+
+    return 0;
+}
