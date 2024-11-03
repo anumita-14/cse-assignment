@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define the structure
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
+
+// Function to swap two structures
+void swap(struct Student *a, struct Student *b) {
+    struct Student temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+// Function to sort the array of structures
+void sortStudents(struct Student arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j].marks > arr[j+1].marks) {
+                swap(&arr[j], &arr[j+1]);
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    struct Student students[n];
+
+    // Input student details
+    for (int i = 0; i < n; i++) {
+        printf("Enter name, roll number, and marks of student %d: ", i+1);
+        scanf("%s %d %f", students[i].name, &students[i].roll, &students[i].marks);
+    }
+
+    // Sort the students by marks
+    sortStudents(students, n);
+
+    // Print the sorted list of students
+    printf("\nSorted list of students by marks:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Name: %s, Roll: %d, Marks: %.2f\n", students[i].name, students[i].roll, students[i].marks);
+    }
+
+    return 0;
+}
