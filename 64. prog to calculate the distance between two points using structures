@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+// Define a structure to represent a point
+struct Point {
+    int x;
+    int y;
+};
+
+// Function to calculate the distance between two points
+double calculateDistance(struct Point p1, struct Point p2) {
+    int x_diff = p2.x - p1.x;
+    int y_diff = p2.y - p1.y;
+    return sqrt((x_diff * x_diff) + (y_diff * y_diff));
+}
+
+int main() {
+    struct Point p1, p2;
+
+    // Input coordinates for the first point
+    printf("Enter coordinates for Point 1 (x y): ");
+    scanf("%d %d", &p1.x, &p1.y);
+
+    // Input coordinates for the second point
+    printf("Enter coordinates for Point 2 (x y): ");
+    scanf("%d %d", &p2.x, &p2.y);
+
+    // Calculate the distance
+    double distance = calculateDistance(p1, p2);
+
+    // Output the distance
+    printf("Distance between the two points: %.2lf\n", distance);
+
+    return 0;
+}
