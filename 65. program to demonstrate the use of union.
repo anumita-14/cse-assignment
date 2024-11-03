@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+// Define a union
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
+int main() {
+    // Declare a union variable
+    union Data data;
+
+    // Assign and print integer value
+    data.i = 10;
+    printf("data.i: %d\n", data.i);
+
+    // Assign and print float value
+    data.f = 220.5;
+    printf("data.f: %f\n", data.f);
+
+    // Assign and print string value
+    strcpy(data.str, "C Programming");
+    printf("data.str: %s\n", data.str);
+
+    return 0;
+}
