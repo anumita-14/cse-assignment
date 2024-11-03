@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Define the structure
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
+
+int main() {
+    struct Student s; // Declare a structure variable
+    struct Student *ptr; // Declare a pointer to the structure
+    ptr = &s; // Assign the address of the structure variable to the pointer
+
+    // Read student information
+    printf("Enter name: ");
+    fgets(ptr->name, sizeof(ptr->name), stdin);
+    printf("Enter roll number: ");
+    scanf("%d", &ptr->roll);
+    printf("Enter marks: ");
+    scanf("%f", &ptr->marks);
+
+    // Display student information
+    printf("\nDisplaying Information:\n");
+    printf("Name: %s", ptr->name);
+    printf("Roll number: %d\n", ptr->roll);
+    printf("Marks: %.2f\n", ptr->marks);
+
+    return 0;
+}
