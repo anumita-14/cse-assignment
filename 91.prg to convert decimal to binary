@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void decimalToBinary(int n) {
+    int binaryNumber[32];
+    int index = 0;
+
+    // Convert decimal to binary
+    while (n > 0) {
+        binaryNumber[index] = n % 2;
+        n = n / 2;
+        index++;
+    }
+
+    // Print the binary number in reverse order
+    for (int i = index - 1; i >= 0; i--) {
+        printf("%d", binaryNumber[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int decimalNumber;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimalNumber);
+
+    printf("Binary equivalent: ");
+    decimalToBinary(decimalNumber);
+
+    return 0;
+}
