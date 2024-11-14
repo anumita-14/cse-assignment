@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int binarySearch(int arr[], int size, int key) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right) {
+        int middle = left + (right - left) / 2;
+
+        if (arr[middle] == key) {
+            return middle; // Key found
+        }
+        if (arr[middle] < key) {
+            left = middle + 1; // Search the right half
+        } else {
+            right = middle - 1; // Search the left half
+        }
+    }
+
+    return -1; // Key not found
+}
+
+int main() {
+    int arr[] = {2, 3, 4, 10, 40};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key;
+
+    printf("Enter the element to search: ");
+    scanf("%d", &key);
+
+    int result = binarySearch(arr, size, key);
+
+    if (result != -1) {
+        printf("Element %d is present at index %d.\n", key, result);
+    } else {
+        printf("Element %d is not present in the array.\n", key);
+    }
+
+    return 0;
+}
