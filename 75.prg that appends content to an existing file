@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    char filename[100];
+    char content[1000];
+
+    printf("Enter the filename: ");
+    scanf("%s", filename);
+
+    file = fopen(filename, "a");
+    if (file == NULL) {
+        printf("Could not open file %s\n", filename);
+        return 1;
+    }
+
+    printf("Enter the content to append: ");
+    getchar();  // Clear the newline character left by scanf
+    fgets(content, sizeof(content), stdin);
+
+    fprintf(file, "%s", content);
+    fclose(file);
+
+    printf("Content successfully appended to %s\n", filename);
+
+    return 0;
+}
