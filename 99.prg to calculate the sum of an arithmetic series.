@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+float arithmeticSeriesSum(int n, float a, float d) {
+    return n * (2 * a + (n - 1) * d) / 2;
+}
+
+int main() {
+    int n;
+    float a, d;
+
+    printf("Enter the number of terms (n): ");
+    scanf("%d", &n);
+    printf("Enter the first term (a): ");
+    scanf("%f", &a);
+    printf("Enter the common difference (d): ");
+    scanf("%f", &d);
+
+    float sum = arithmeticSeriesSum(n, a, d);
+    printf("The sum of the arithmetic series is: %.2f\n", sum);
+
+    return 0;
+}
